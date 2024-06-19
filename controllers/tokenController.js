@@ -4,7 +4,7 @@ dotenv.config();
 
 export const createToken = async (req, res) => {
   try {
-    const roomName = "onetoone";
+    const roomName = req.query.room || "onetoone";
     const participantName = req.query.participantName || "Unknown";
 
     const at = new AccessToken(
