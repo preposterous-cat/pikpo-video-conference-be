@@ -5,7 +5,7 @@ dotenv.config();
 
 export const getListParticipants = async (req, res) => {
   try {
-    const roomName = "onetoone";
+    const roomName = req.query.room || "onetoone";
     const livekitHost = process.env.LIVEKIT_URL;
 
     const roomService = new RoomServiceClient(
